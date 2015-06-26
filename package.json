@@ -1,0 +1,13 @@
+{
+  "name": "hyperclick",
+  "version": "0.0.1",
+  "repository": "https://github.com/facebooknuclideapm/hyperclick",
+  "description": "Hyperclick UI",
+  "engines": {
+    "atom": ">=1.0.0"
+  },
+  "nuclide": {
+    "packageType": "Atom",
+    "testRunner": "apm"
+  }
+}
