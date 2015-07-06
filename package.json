@@ -1,13 +1,27 @@
 {
-  "name": "hyperclick",
-  "version": "0.1.0",
-  "repository": "https://github.com/facebooknuclideapm/hyperclick",
+  "consumedServices": {
+    "hyperclick.provider": {
+      "versions": {
+        "0.0.0": "consumeProvider"
+      }
+    }
+  },
+  "dependencies": {
+    "react-for-atom": "0.13.6"
+  },
   "description": "Hyperclick UI",
+  "devDependencies": {
+    "nuclide-atom-interfaces": "0.0.23"
+  },
   "engines": {
     "atom": ">=1.0.0"
   },
+  "main": "./lib/main",
+  "name": "hyperclick",
   "nuclide": {
     "packageType": "Atom",
     "testRunner": "apm"
-  }
+  },
+  "repository": "https://github.com/facebooknuclideapm/hyperclick",
+  "version": "0.0.23"
 }
