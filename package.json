@@ -7,15 +7,15 @@
     }
   },
   "dependencies": {
-    "nuclide-commons": "0.0.26",
+    "nuclide-commons": "0.0.28",
     "react-for-atom": "0.13.6"
   },
   "description": "Hyperclick UI",
   "devDependencies": {
-    "nuclide-atom-interfaces": "0.0.26"
+    "nuclide-atom-interfaces": "0.0.28"
   },
   "engines": {
-    "atom": ">=1.0.3"
+    "atom": ">=1.0.4"
   },
   "main": "./lib/main",
   "name": "hyperclick",
@@ -31,5 +31,5 @@
     }
   },
   "repository": "https://github.com/facebooknuclideapm/hyperclick",
-  "version": "0.0.26"
+  "version": "0.0.28"
 }
