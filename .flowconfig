@@ -1,0 +1,24 @@
+[include]
+
+[ignore]
+.*/node_modules/fbjs/lib/.*
+# ignore module src to prefer declaration
+.*/node_modules/react/react.js
+
+[libs]
+# from nuclide
+./interfaces/atom-jasmine.js
+./interfaces/atom.js
+./interfaces/jasmine.js
+./interfaces/need-to-upstream-to-flow-lib.js
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.decorators=ignore
+suppress_comment=.*\\$FlowFixMe.*
+suppress_comment=.*\\$FlowIssue.*
+suppress_comment=.*\\$FlowIgnore.*
+unsafe.enable_getters_and_setters=true
+
+[version]
+0.21.0
