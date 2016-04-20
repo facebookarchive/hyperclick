@@ -1,6 +1,3 @@
-**NOTE:** The official repository for this package is https://github.com/facebook/nuclide.
-Please file all issues and pull requests there.
-
 # Hyperclick
 
 Pluggable text-clicking UI for [Atom](https://atom.io/).
@@ -13,12 +10,13 @@ Hyperclick is triggered by two events:
 
 ## Known Providers
 
-* [nuclide-buck-files](https://atom.io/packages/nuclide-buck-files)
-* [nuclide-clang-atom](https://atom.io/packages/nuclide-clang-atom)
-* [nuclide-flow](https://atom.io/packages/nuclide-flow)
-* [nuclide-hack](https://atom.io/packages/nuclide-hack)
-* [nuclide-ocaml](https://atom.io/packages/nuclide-ocaml)
-* [js-hyperclick](https://atom.io/packages/js-hyperclick) - Jump to variable definitions, including when imported/required from another file
+* 'nuclide-buck-files' [Nuclide](https://atom.io/packages/nuclide) feature
+* 'nuclide-clang-atom' Nuclide feature
+* 'nuclide-flow' Nuclide feature
+* 'nuclide-hack' Nuclide feature
+* 'nuclide-ocaml' Nuclide feature
+* 'js-hyperclick' Nuclide feature - Jump to variable definitions, including when imported/required from another file
+* 'php-hyperclick' Locate php classes with the help of composer, and open the file
 
 ## Demo
 
@@ -98,6 +96,7 @@ The methods return a suggestion or a `Promise` that resolves to a suggestion:
   If there are multiple possibilities, this can be an array of objects with:
 
     - `title`: A string to present in the UI for the user to select.
+    - `rightLabel`(optional): An indicator denoting the "kind" of suggestion this represents
     - `callback`: The function to call when the user selects this object.
 
 Additional properties:
