@@ -1,4 +1,25 @@
 {
+  "name": "hyperclick",
+  "version": "0.0.35",
+  "description": "Pluggable text-clicking UI for Atom",
+  "keywords": [
+    "nuclide"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "./lib/main.js",
+  "repository": "https://github.com/facebooknuclideapm/hyperclick",
+  "scripts": {
+    "release": "./scripts/release.js"
+  },
+  "dependencies": {
+    "react-for-atom": "15.0.1-0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.38"
+  },
+  "engines": {
+    "atom": ">=1.1.0"
+  },
   "consumedServices": {
     "hyperclick.provider": {
       "versions": {
@@ -6,32 +27,11 @@
       }
     }
   },
-  "dependencies": {
-    "nuclide-analytics": "0.0.35",
-    "nuclide-commons": "0.0.35",
-    "react-for-atom": "0.14.3"
-  },
-  "description": "Hyperclick UI",
-  "devDependencies": {
-    "hyperclick-interfaces": "0.0.35"
-  },
-  "engines": {
-    "atom": ">=1.1.0"
-  },
-  "license": "SEE LICENSE IN LICENSE",
-  "main": "./lib/main",
-  "name": "hyperclick",
-  "nuclide": {
-    "packageType": "Atom",
-    "testRunner": "apm"
-  },
   "providedServices": {
     "hyperclick.observeTextEditor": {
       "versions": {
         "0.0.0": "observeTextEditor"
       }
     }
-  },
-  "repository": "https://github.com/facebooknuclideapm/hyperclick",
-  "version": "0.0.35"
+  }
 }

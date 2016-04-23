@@ -11,10 +11,9 @@
 
 /* eslint-env browser */
 
-import type {HyperclickProvider} from 'hyperclick-interfaces';
+import type {HyperclickProvider} from '../lib/types';
 import type HyperclickForTextEditor from '../lib/HyperclickForTextEditor';
 
-import {array} from 'nuclide-commons';
 import {Point, Range} from 'atom';
 import Hyperclick from '../lib/Hyperclick';
 import invariant from 'assert';
@@ -33,7 +32,7 @@ describe('Hyperclick', () => {
     jasmine.attachToDOM(textEditorView);
 
     hyperclick = new Hyperclick();
-    hyperclickForTextEditor = array.from(hyperclick._hyperclickForTextEditors)[0];
+    hyperclickForTextEditor = Array.from(hyperclick._hyperclickForTextEditors)[0];
   }));
 
   afterEach(() => {
@@ -65,11 +64,10 @@ describe('Hyperclick', () => {
   }
 
   function dispatch(
-      // $FlowIssue KeyboardEvent isn't defined.
       eventClass: typeof KeyboardEvent | typeof MouseEvent,
       type: string,
       position: atom$Point,
-      properties?: {clientX?: number, clientY?: number, metaKey?: boolean},
+      properties?: {clientX?: number; clientY?: number; metaKey?: boolean},
     ): void {
     const {clientX, clientY} = clientCoordinatesForScreenPosition(position);
     if (properties != null) {
@@ -409,37 +407,33 @@ describe('Hyperclick', () => {
       });
     });
 
-    it('handles <mousemove> in a different multi-range as the last suggestion', () => {
+    it('ignores <mousedown> when out of result range', () => {
       waitsForPromise(async () => {
-        const range = [
-          new Range(new Point(0, 1), new Point(0, 2)),
-          new Range(new Point(0, 4), new Point(0, 5)),
-        ];
         const callback = jasmine.createSpy('callback');
         const provider = {
           providerName: 'test',
-          async getSuggestion(sourceTextEditor, position) {
+          async getSuggestionForWord(sourceTextEditor, text, range) {
             return {range, callback};
           },
         };
-        spyOn(provider, 'getSuggestion').andCallThrough();
+        spyOn(provider, 'getSuggestionForWord').andCallThrough();
         hyperclick.consumeProvider(provider);
 
-        const position1 = new Point(0, 1);
+        const inRangePosition = new Point(0, 1);
+        const outOfRangePosition = new Point(1, 0);
+        const expectedText = 'word1';
+        const expectedRange = Range.fromObject([[0, 0], [0, 5]]);
 
-        dispatch(MouseEvent, 'mousemove', position1, {metaKey: true});
+        dispatch(MouseEvent, 'mousemove', inRangePosition, {metaKey: true});
         await hyperclickForTextEditor.getSuggestionAtMouse();
-        expect(provider.getSuggestion).toHaveBeenCalledWith(textEditor, position1);
+        expect(provider.getSuggestionForWord).toHaveBeenCalledWith(
+            textEditor,
+            expectedText,
+            expectedRange);
 
-        const position2 = new Point(0, 3);
-        dispatch(MouseEvent, 'mousemove', position2, {metaKey: true});
-        await hyperclickForTextEditor.getSuggestionAtMouse();
-        expect(provider.getSuggestion).toHaveBeenCalledWith(textEditor, position2);
-
-        expect(provider.getSuggestion.callCount).toBe(2);
-
-        dispatch(MouseEvent, 'mousedown', position2, {metaKey: true});
-        expect(callback.callCount).toBe(1);
+        dispatch(MouseEvent, 'mousemove', outOfRangePosition, {metaKey: true});
+        dispatch(MouseEvent, 'mousedown', outOfRangePosition, {metaKey: true});
+        expect(callback.callCount).toBe(0);
       });
     });
   });
