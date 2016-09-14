@@ -7,7 +7,7 @@
   ],
   "license": "SEE LICENSE IN LICENSE",
   "main": "./lib/main.js",
-  "repository": "https://github.com/facebooknuclideapm/hyperclick",
+  "repository": "https://github.com/facebooknuclide/hyperclick",
   "scripts": {
     "release": "./scripts/release.js"
   },
