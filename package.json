@@ -1,6 +1,6 @@
 {
   "name": "hyperclick",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "Pluggable text-clicking UI for Atom",
   "keywords": [
     "nuclide"
@@ -228,7 +228,7 @@
       ]
     }
   },
-  "viewProviders" : [
+  "viewProviders": [
     "provideHyperclickView"
   ]
 }
