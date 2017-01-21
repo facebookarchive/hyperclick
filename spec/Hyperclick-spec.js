@@ -25,8 +25,10 @@ describe('Hyperclick', () => {
   let hyperclickForTextEditor: HyperclickForTextEditor = (null: any);
 
   async function setup() {
-    // We need to load the package so the config is registered.
-    atom.packages.loadPackage('hyperclick');
+    const pack = atom.packages.loadPackage('hyperclick');
+    invariant(pack != null);
+    pack.registerConfigSchemaFromMetadata();
+    pack.registerViewProviders();
 
     textEditor = await atom.workspace.open('hyperclick.txt');
     textEditorView = atom.views.getView(textEditor);
@@ -49,10 +51,10 @@ describe('Hyperclick', () => {
   ): {clientX: number, clientY: number} {
     const positionOffset = textEditorView.pixelPositionForScreenPosition(screenPosition);
     const {component} = textEditorView;
-    invariant(component);
-    const scrollViewClientRect = component.domNode
-        .querySelector('.scroll-view')
-        .getBoundingClientRect();
+    invariant(component != null);
+    const scrollViewElement = component.domNode.querySelector('.scroll-view');
+    invariant(scrollViewElement != null);
+    const scrollViewClientRect = scrollViewElement.getBoundingClientRect();
     const clientX = scrollViewClientRect.left
                   + positionOffset.left
                   - textEditorView.getScrollLeft();
