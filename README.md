@@ -15,6 +15,7 @@ Hyperclick is triggered by two events:
 * [js-hyperclick](https://atom.io/packages/js-hyperclick) Jump to variable definitions, including when imported/required from another file
 * [hyperclick-php](https://atom.io/packages/hyperclick-php) Locate php classes with the help of composer, and open the file
 * [go-plus](https://atom.io/packages/go-plus) Jump to definition for [go](https://golang.org)
+* [git-split-diff-hyperclick](https://atom.io/packages/git-split-diff-hyperclick) Click on git index to diff files with [split-diff](https://atom.io/packages/split-diff).
 
 ## Demo
 
