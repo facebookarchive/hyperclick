@@ -3,19 +3,18 @@
   "version": "0.0.40",
   "description": "Pluggable text-clicking UI for Atom",
   "keywords": [
+    "hyperclick",
     "nuclide"
   ],
-  "license": "SEE LICENSE IN LICENSE",
-  "main": "./lib/main.js",
+  "license": "BSD-3-Clause",
   "repository": "https://github.com/facebooknuclide/hyperclick",
   "scripts": {
-    "release": "./scripts/release.js"
-  },
-  "dependencies": {
-    "react-for-atom": "15.3.1-0"
+    "release": "./scripts/release.sh"
   },
   "devDependencies": {
-    "babel-core": "^5.8.38"
+    "atom-ide-ui": "0.1.7",
+    "babili-webpack-plugin": "^0.1.2",
+    "webpack": "^3.0.0"
   },
   "engines": {
     "atom": ">=1.1.0"
@@ -23,7 +22,12 @@
   "consumedServices": {
     "hyperclick.provider": {
       "versions": {
-        "0.0.0": "consumeProvider"
+        "0.0.0": "addLegacyProvider"
+      }
+    },
+    "hyperclick": {
+      "versions": {
+        "0.1.0": "addProvider"
       }
     }
   },
@@ -227,8 +231,5 @@
         }
       ]
     }
-  },
-  "viewProviders": [
-    "provideHyperclickView"
-  ]
+  }
 }
