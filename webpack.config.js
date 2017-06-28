@@ -12,6 +12,12 @@ module.exports = {
     'electron',
     'remote',
   ],
+  resolve: {
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat',
+    },
+  },
   plugins: [
     // log4js appenders have optional (non-existent) dependencies
     new webpack.IgnorePlugin(/.*/, /log4js\/lib\/appenders/),
