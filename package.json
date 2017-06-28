@@ -1,6 +1,6 @@
 {
   "name": "hyperclick",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pluggable text-clicking UI for Atom",
   "keywords": [
     "hyperclick",
