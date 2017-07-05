@@ -12,7 +12,7 @@
     "release": "./scripts/release.sh"
   },
   "devDependencies": {
-    "atom-ide-ui": "0.1.7",
+    "atom-ide-ui": "0.1.8",
     "babili-webpack-plugin": "^0.1.2",
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0",
