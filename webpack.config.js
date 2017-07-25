@@ -11,6 +11,7 @@ module.exports = {
     'atom',
     'electron',
     'remote',
+    'log4js', // It's bundled with Atom.
   ],
   resolve: {
     alias: {
