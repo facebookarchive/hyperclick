@@ -7,6 +7,7 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
+  devtool: 'source-map',
   externals: [
     'atom',
     'electron',
