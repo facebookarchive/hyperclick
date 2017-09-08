@@ -1,6 +1,6 @@
 # Hyperclick
 
-**NOTE**: This package is now a bundled version of the code in [`atom-ide-ui`](https://atom.io/packages/atom-ide-ui). Please refer to the [`atom-ide-ui` repository](https://github.com/facebook/nuclide/tree/master/modules/atom-ide-ui/pkg/hyperclick) to view or modify the source.
+**NOTE**: This package is now a bundled version of the code in [`atom-ide-ui`](https://atom.io/packages/atom-ide-ui). Please refer to the [`atom-ide-ui` repository](https://github.com/facebook-atom/atom-ide-ui/tree/master/modules/atom-ide-ui/pkg/hyperclick) to view or modify the source.
 
 Pluggable text-clicking UI for [Atom](https://atom.io/).
 
@@ -11,7 +11,7 @@ Hyperclick is triggered by two events:
 
 ## Known Providers
 
-Check out the wiki: https://github.com/facebooknuclide/hyperclick/wiki/Known-Providers
+Check out the wiki: https://github.com/facebook-atom/hyperclick/wiki/Known-Providers
 
 ## Demo
 

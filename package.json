@@ -7,7 +7,7 @@
     "nuclide"
   ],
   "license": "BSD-3-Clause",
-  "repository": "https://github.com/facebooknuclide/hyperclick",
+  "repository": "https://github.com/facebook-atom/hyperclick",
   "scripts": {
     "release": "./scripts/release.sh"
   },
